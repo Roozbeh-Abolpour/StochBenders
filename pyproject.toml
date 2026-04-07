@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools>=65", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "stochbenders"
+version = "0.1.0"
+description = "Hierarchical Benders Decomposition framework for MILP problems"
+authors = [
+    { name = "Roozbeh Abolpour" }
+]
+readme = "README.md"
+requires-python = ">=3.9"
+
+dependencies = [
+    "numpy>=1.23",
+    "pyomo>=6.6",
+    "highspy>=1.6"
+]
+
+keywords = [
+    "optimization",
+    "MILP",
+    "benders decomposition",
+    "stochastic optimization",
+    "decomposition"
+]
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Mathematics"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "black",
+    "isort",
+    "flake8"
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["stochbenders*"]
+
+[tool.black]
+line-length = 88
+
+[tool.isort]
+profile = "black"
